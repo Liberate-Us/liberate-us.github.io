@@ -337,3 +337,41 @@ body { background: #101B3D; }
   .feature-card { min-height: 195px; }
   .download-box { padding: 42px 24px; }
 }
+
+
+/* v5 — discreet compatibility and legal information */
+.compatibility-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 0;
+  max-width: 530px;
+  color: #adc5de;
+  font-size: 13px;
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.compatibility-dot {
+  display: inline-block;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #72B7F2;
+}
+.footer-bottom {
+  align-items: flex-start;
+  font-size: 11px;
+  color: #9bb0ca;
+  line-height: 1.7;
+}
+.footer-bottom p {
+  max-width: 790px;
+}
+@media (max-width: 720px) {
+  .compatibility-note {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+}
