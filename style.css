@@ -55,3 +55,184 @@ body {background:linear-gradient(180deg,#101B3D,#101b33 60%,#0d1730)}
   .preview-stage {height:300px}
   .navigation nav {display:none}
 }
+
+
+/* v3 — restrained editorial layout, official Liberate Us identity */
+:root {
+  --bg: #101B3D;
+  --text: #F5FAFF;
+  --muted: #B5CADC;
+  --line: rgba(178, 208, 240, .15);
+}
+
+html { scroll-padding-top: 90px; }
+body { background: #101B3D; }
+
+.site-header {
+  background: rgba(16, 27, 61, .96);
+  border-bottom: 1px solid rgba(200, 220, 250, .12);
+}
+
+.navigation {
+  min-height: 78px;
+  gap: 24px;
+}
+
+.navigation nav { gap: 26px; }
+.navigation nav a { white-space: nowrap; }
+
+.hero {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  gap: clamp(24px, 4vw, 64px);
+  padding-top: 90px;
+  padding-bottom: 106px;
+  min-height: 650px;
+  overflow: visible;
+}
+
+.hero-copy { min-width: 0; }
+
+.hero h1 {
+  font-size: clamp(45px, 5.1vw, 72px);
+  line-height: 1.12;
+  letter-spacing: -.055em;
+  margin: 25px 0 24px;
+  max-width: 690px;
+}
+
+.hero-lead {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 540px;
+}
+
+.hero-meta { margin-top: 21px; }
+.hero-actions { margin-bottom: 25px; }
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 480px;
+  transform: none;
+  margin: 0;
+  overflow: visible;
+}
+
+.brand-showcase {
+  width: min(100%, 460px);
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.showcase-glow {
+  position: absolute;
+  z-index: -1;
+  inset: 14%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(78, 159, 232, .28),
+    rgba(78, 159, 232, .07) 52%,
+    transparent 75%
+  );
+  filter: blur(22px);
+}
+
+.showcase-ring {
+  position: absolute;
+  border: 1px solid rgba(130, 185, 237, .17);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring-outer { inset: 4%; }
+.ring-inner { inset: 15%; border-color: rgba(130, 185, 237, .10); }
+
+.showcase-icon {
+  width: 64%;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 29%;
+  overflow: hidden;
+  box-shadow:
+    0 25px 75px rgba(0, 0, 0, .30),
+    0 0 65px rgba(78, 159, 232, .14);
+}
+
+.showcase-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.showcase-caption {
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #8BA6C6;
+  font-weight: 800;
+}
+
+.ambient-a {
+  opacity: .12;
+  right: -300px;
+}
+
+.ambient-b { opacity: .08; }
+
+.section-intro h2,
+.about-grid h2,
+.download-box h2 {
+  letter-spacing: -.045em;
+}
+
+.feature-card { min-width: 0; }
+.button { text-align: center; }
+
+@media (min-width: 721px) and (max-width: 1100px) {
+  .hero { grid-template-columns: 1.2fr .8fr; gap: 15px; }
+  .hero h1 { font-size: clamp(44px, 5vw, 57px); }
+  .hero-art { min-height: 360px; }
+  .brand-showcase { width: min(100%, 370px); }
+  .hero-lead { font-size: 16px; }
+}
+
+@media (max-width: 720px) {
+  .navigation { min-height: 68px; }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 64px;
+    padding-bottom: 70px;
+    gap: 6px;
+    min-height: 0;
+  }
+  .hero h1 {
+    font-size: clamp(39px, 9vw, 58px);
+    line-height: 1.14;
+    overflow-wrap: normal;
+  }
+  .hero-lead { font-size: 16px; line-height: 1.75; }
+  .hero-art {
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    transform: none;
+    margin: 20px 0 0;
+  }
+  .brand-showcase { width: min(100%, 360px); }
+  .showcase-caption { bottom: 3px; }
+}
+
+@media (max-width: 370px) {
+  .hero h1 { font-size: 38px; }
+  .hero-actions { gap: 11px; }
+  .brand-showcase { width: min(100%, 300px); }
+}
