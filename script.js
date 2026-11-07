@@ -2,8 +2,8 @@ const strings = {
   pl: {
     navFeatures:"Funkcje",navScreens:"Wygląd",navAbout:"O projekcie",navDownload:"Pobierz",
     eyebrow:"OTWARTY KOD · ANDROID",
-    heroHeading:"Wiadomości Librus Synergia.<br><em>W wygodnej aplikacji.</em>",
-    heroLead:"Liberate Us to niezależna aplikacja na Androida do obsługi wiadomości w systemie Librus Synergia. Odczytuj wiadomości, odpowiadaj i korzystaj z zapisanych treści offline.",
+    heroHeading:"Wiadomości ze szkolnego dziennika.<br><em>Wygodnie na telefonie.</em>",
+    heroLead:"Liberate Us to niezależna aplikacja na Androida do czytania, pisania i organizowania wiadomości ze szkolnego dziennika elektronicznego.",
     downloadApk:"Pobierz APK",sourceCode:"Kod źródłowy",android:"Android 8.0+",free:"Bezpłatnie · MIT",
     mockInbox:"Wiadomości",mockReceived:"Odebrane",mockSent:"Wysłane",mockDrafts:"Robocze",offlineNote:"Wiadomości również offline",mockLabel:"Ilustracja poglądowa interfejsu",
     featuresKicker:"CO POTRAFI",featuresHeading:"Wszystko, co potrzebne do wiadomości.",
@@ -29,8 +29,8 @@ const strings = {
   en: {
     navFeatures:"Features",navScreens:"Screens",navAbout:"About",navDownload:"Download",
     eyebrow:"OPEN SOURCE · ANDROID",
-    heroHeading:"Librus Synergia messages.<br><em>In one convenient app.</em>",
-    heroLead:"Liberate Us is an independent Android application for messaging in Librus Synergia. Read and reply to messages, with offline access to cached content.",
+    heroHeading:"Messages from your school diary.<br><em>Made easy on Android.</em>",
+    heroLead:"Liberate Us is an independent Android app for reading, writing and organizing messages from a school electronic diary.",
     downloadApk:"Download APK",sourceCode:"Source code",android:"Android 8.0+",free:"Free · MIT",
     mockInbox:"Messages",mockReceived:"Inbox",mockSent:"Sent",mockDrafts:"Drafts",offlineNote:"Messages available offline",mockLabel:"Illustrative interface concept",
     featuresKicker:"WHAT IT DOES",featuresHeading:"Everything you need for messaging.",
@@ -59,7 +59,7 @@ let current = "pl";
 function setLanguage(lang) {
   current = lang;
   document.documentElement.lang = lang;
-  document.title = lang === "pl" ? "Liberate Us — wiadomości po Twojemu" : "Liberate Us — messaging your way";
+  document.title = lang === "pl" ? "Liberate Us — wiadomości ze szkolnego dziennika" : "Liberate Us — school messages on Android";
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const value = strings[lang][el.dataset.i18n];
     if (value === undefined) return;
