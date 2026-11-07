@@ -236,3 +236,104 @@ body { background: #101B3D; }
   .hero-actions { gap: 11px; }
   .brand-showcase { width: min(100%, 300px); }
 }
+
+
+/* v4 — calm, restrained presentation */
+.ambient, .art-halo, .showcase-ring, .showcase-caption {
+  display: none !important;
+}
+.site-header { background: #101B3D; }
+.navigation { min-height: 74px; }
+.brand { letter-spacing: -.025em; }
+.hero {
+  min-height: 560px;
+  padding-top: 75px;
+  padding-bottom: 85px;
+  gap: clamp(30px, 4vw, 65px);
+}
+.hero h1 {
+  font-size: clamp(36px, 4.15vw, 59px);
+  line-height: 1.17;
+  letter-spacing: -.045em;
+  font-weight: 600;
+  max-width: 660px;
+}
+.hero h1 em { font-weight: 500; }
+.hero-lead {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 520px;
+}
+.eyebrow, .section-kicker {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+.button {
+  border-radius: 11px;
+  padding: 15px 22px;
+  min-height: 52px;
+  font-size: 14px;
+}
+.hero-art { min-height: 360px; }
+.brand-showcase { width: min(100%, 360px); }
+.showcase-icon {
+  width: 65%;
+  box-shadow: 0 20px 55px rgba(3,10,29,.23);
+}
+.showcase-glow { opacity: .35; filter: blur(45px); }
+.section { padding-top: 95px; padding-bottom: 95px; }
+.section-intro h2, .about-grid h2, .download-box h2 {
+  font-size: clamp(34px, 3.8vw, 51px);
+  line-height: 1.22;
+  letter-spacing: -.04em;
+  font-weight: 600;
+}
+.feature-grid { gap: 14px; }
+.feature-card {
+  min-height: 225px;
+  border-radius: 16px;
+  padding: 27px;
+  box-shadow: none;
+}
+.feature-card:hover { transform: none; }
+.feature-card h3 { font-size: 18px; }
+.feature-card p, .about-text p { line-height: 1.8; }
+.feature-icon {
+  width: 41px;
+  height: 41px;
+  font-size: 21px;
+  border-radius: 11px;
+  margin-bottom: 22px;
+}
+.about-section { background: #142848; }
+.download-box {
+  border-radius: 18px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.download-glow { display: none; }
+.screen-preview { border-radius: 16px; }
+.preview-stage { height: 305px; }
+@media (max-width: 950px) and (min-width: 721px) {
+  .hero { min-height: 480px; gap: 22px; }
+  .hero h1 { font-size: clamp(33px, 4vw, 45px); }
+  .hero-art { min-height: 310px; }
+  .brand-showcase { width: min(100%, 300px); }
+}
+@media (max-width: 720px) {
+  .hero {
+    min-height: 0;
+    padding-top: 60px;
+    padding-bottom: 56px;
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: clamp(35px, 8vw, 47px);
+    line-height: 1.18;
+  }
+  .hero-art { min-height: 0; margin: 0; }
+  .brand-showcase { width: min(78vw, 275px); }
+  .section { padding-top: 65px; padding-bottom: 65px; }
+  .feature-card { min-height: 195px; }
+  .download-box { padding: 42px 24px; }
+}
