@@ -391,3 +391,35 @@ p { overflow-wrap:break-word; }
   html { scroll-behavior:auto; }
   *,*::before,*::after { transition:none!important;animation:none!important; }
 }
+
+
+/* v8: touch target refinement */
+.brand {
+  min-height:44px;
+}
+.lang {
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+}
+.navigation nav a {
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+}
+.text-link {
+  min-height:44px;
+  align-items:center;
+}
+.footer-links a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:44px;
+  min-height:44px;
+}
+@media (max-width:720px) {
+  .footer-links { row-gap:4px; }
+}
