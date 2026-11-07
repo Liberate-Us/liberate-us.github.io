@@ -1,6 +1,6 @@
 const strings = {
   pl: {
-    navFeatures:"Funkcje",navAbout:"O projekcie",navDownload:"Pobierz",
+    navFeatures:"Funkcje",navScreens:"Wygląd",navAbout:"O projekcie",navDownload:"Pobierz",
     eyebrow:"OTWARTY KOD · ANDROID",
     heroHeading:"Twoje wiadomości.<br><em>Twoje zasady.</em>",
     heroLead:"Liberate Us to niezależna aplikacja na Androida do obsługi wiadomości w systemie Librus Synergia. Prościej, przejrzyściej i po swojemu.",
@@ -14,6 +14,7 @@ const strings = {
     f4Title:"Powiadomienia",f4Desc:"Okresowe sprawdzanie nowych wiadomości i powiadomienia na Androidzie.",
     f5Title:"Dostęp offline",f5Desc:"Odczytuj zapisane lokalnie wiadomości również bez połączenia z internetem.",
     f6Title:"Otwarty kod",f6Desc:"Projekt na licencji MIT. Kod i historia zmian są publicznie dostępne na GitHubie.",
+    screensKicker:"ZOBACZ APLIKACJĘ",screensHeading:"Zaprojektowana dla codziennej komunikacji.",screensLead:"Tutaj pojawią się rzeczywiste zrzuty ekranu aplikacji. Na razie pokazujemy miejsca przygotowane pod galerię.",previewLabel:"MIEJSCE NA ZRZUT EKRANU",screenInbox:"Odebrane",screenReading:"Czytanie wiadomości",screenComposer:"Nowa wiadomość",
     aboutKicker:"ZA KULISAMI",aboutHeading:"Niezależny projekt.<br><span>Otwarty rozwój.</span>",
     aboutP1:"Liberate Us powstaje jako niezależna alternatywa dla obsługi wiadomości w Librus Synergia. To projekt rozwijany publicznie — nowe funkcje, poprawki i kolejne wydania pojawiają się na GitHubie.",
     aboutP2:"Aplikacja została stworzona metodą vibe codingu, ze znacznym wykorzystaniem narzędzi AI. Jest udostępniana bez gwarancji, w stanie „as is”. Korzystasz z niej na własne ryzyko.",
@@ -26,7 +27,7 @@ const strings = {
     legal:"Liberate Us jest niezależnym projektem. Nazwy Librus i Synergia oraz związane z nimi znaki należą do odpowiednich właścicieli i zostały użyte wyłącznie informacyjnie. Projekt nie jest z nimi powiązany ani przez nich wspierany."
   },
   en: {
-    navFeatures:"Features",navAbout:"About",navDownload:"Download",
+    navFeatures:"Features",navScreens:"Screens",navAbout:"About",navDownload:"Download",
     eyebrow:"OPEN SOURCE · ANDROID",
     heroHeading:"Your messages.<br><em>Your way.</em>",
     heroLead:"Liberate Us is an independent Android application for messaging in Librus Synergia. A simpler, clearer way to stay in touch.",
@@ -40,6 +41,7 @@ const strings = {
     f4Title:"Notifications",f4Desc:"Periodic checks for new messages and Android notifications.",
     f5Title:"Offline access",f5Desc:"Read locally cached messages even without an internet connection.",
     f6Title:"Open source",f6Desc:"MIT-licensed project. Source code and development history are available on GitHub.",
+    screensKicker:"SEE THE APPLICATION",screensHeading:"Built for everyday communication.",screensLead:"Actual application screenshots will appear here. For now, these are clearly marked gallery placeholders.",previewLabel:"SCREENSHOT PLACEHOLDER",screenInbox:"Inbox",screenReading:"Reading messages",screenComposer:"Compose message",
     aboutKicker:"BEHIND THE PROJECT",aboutHeading:"Independent project.<br><span>Open development.</span>",
     aboutP1:"Liberate Us is an independent alternative for handling messages in Librus Synergia. Development happens in public, with new features, fixes, and releases published on GitHub.",
     aboutP2:"The application was developed through vibe coding, with extensive use of AI tools. It is provided as is, without warranties. You use it at your own risk.",
