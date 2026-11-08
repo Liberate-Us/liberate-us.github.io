@@ -70,3 +70,97 @@ function setLanguage(lang) {
   langButton.setAttribute("aria-label",lang === "pl" ? "Switch to English" : "Przełącz na polski");
 }
 langButton.addEventListener("click",() => setLanguage(current === "pl" ? "en" : "pl"));
+
+
+/* Accessible screenshot lightbox */
+function initGalleryLightbox() {
+  const links = [...document.querySelectorAll(".gallery-image-link")];
+  const modal = document.getElementById("gallery-lightbox");
+  if (!links.length || !modal) return;
+
+  const picture = modal.querySelector(".gallery-lightbox-image");
+  const counter = modal.querySelector(".gallery-lightbox-counter");
+  const closeButton = modal.querySelector(".gallery-lightbox-close");
+  const prevButton = modal.querySelector(".gallery-lightbox-prev");
+  const nextButton = modal.querySelector(".gallery-lightbox-next");
+  const view = modal.querySelector(".gallery-lightbox-view");
+
+  let current = 0;
+  let previousFocus = null;
+
+  function show(index) {
+    current = (index + links.length) % links.length;
+    const thumbnail = links[current].querySelector("img");
+    picture.src = thumbnail.currentSrc || thumbnail.src;
+    picture.alt = thumbnail.alt;
+    counter.textContent = (current + 1) + " / " + links.length;
+    view.scrollTop = 0;
+    view.scrollLeft = 0;
+  }
+
+  function open(index) {
+    previousFocus = document.activeElement;
+    show(index);
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("gallery-lightbox-active");
+    closeButton.focus();
+  }
+
+  function close() {
+    if (!modal.classList.contains("is-open")) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("gallery-lightbox-active");
+    picture.removeAttribute("src");
+    if (previousFocus && previousFocus.isConnected) {
+      previousFocus.focus();
+    }
+  }
+
+  links.forEach((link, index) => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      open(index);
+    });
+  });
+
+  closeButton.addEventListener("click", close);
+  prevButton.addEventListener("click", () => show(current - 1));
+  nextButton.addEventListener("click", () => show(current + 1));
+
+  modal.addEventListener("click", event => {
+    if (event.target === modal || event.target === view) close();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!modal.classList.contains("is-open")) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close();
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      show(current - 1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      show(current + 1);
+    } else if (event.key === "Tab") {
+      const controls = [closeButton, prevButton, nextButton];
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initGalleryLightbox);
+} else {
+  initGalleryLightbox();
+}

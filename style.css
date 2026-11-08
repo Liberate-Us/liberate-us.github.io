@@ -453,3 +453,88 @@ p { overflow-wrap:break-word; }
     margin-bottom:12px;
   }
 }
+
+/* Screenshot lightbox */
+body.gallery-lightbox-active { overflow:hidden; }
+.gallery-lightbox {
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(4,10,21,.94);
+  overscroll-behavior:contain;
+}
+.gallery-lightbox.is-open { display:flex; }
+.gallery-lightbox-view {
+  height:calc(100dvh - 100px);
+  width:calc(100vw - 150px);
+  max-width:1100px;
+  overflow:auto;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  scrollbar-width:thin;
+}
+.gallery-lightbox-image {
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:none;
+  object-fit:contain;
+  border-radius:10px;
+  box-shadow:0 10px 50px rgba(0,0,0,.45);
+}
+.gallery-lightbox-close,
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  position:absolute;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  background:rgba(25,40,65,.88);
+  color:#fff;
+  cursor:pointer;
+  font-family:Arial,sans-serif;
+}
+.gallery-lightbox-close {
+  top:18px;right:22px;
+  width:48px;height:48px;font-size:33px;
+}
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  top:50%;transform:translateY(-50%);
+  width:48px;height:48px;font-size:44px;
+}
+.gallery-lightbox-prev { left:18px; }
+.gallery-lightbox-next { right:18px; }
+.gallery-lightbox-counter {
+  position:absolute;
+  bottom:15px;left:50%;transform:translateX(-50%);
+  color:#e8f1fa;font-size:14px;
+  font-variant-numeric:tabular-nums;
+}
+.gallery-lightbox button:focus-visible {
+  outline:3px solid #72B7F2;
+  outline-offset:3px;
+}
+@media (max-width:600px) {
+  .gallery-lightbox-view {
+    width:calc(100vw - 20px);
+    height:calc(100dvh - 125px);
+  }
+  .gallery-lightbox-prev,
+  .gallery-lightbox-next {
+    top:auto;bottom:13px;transform:none;
+    width:42px;height:42px;font-size:36px;
+  }
+  .gallery-lightbox-prev { left:18px; }
+  .gallery-lightbox-next { right:18px; }
+  .gallery-lightbox-close {
+    top:10px;right:10px;width:44px;height:44px;
+  }
+}
